@@ -3,8 +3,6 @@ const path = require('path')
 const os = require('os')
 const app = express()
 
-const network = os.networkInterfaces()
-const host = network.wlp2s0[0].address
 
 const PORT = process.env.PORT || 3000
 
@@ -17,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/messages', async (req, res) => {
     res.status(200)
-    res.end()
+    res.end('ok')
 })
 
 app.get('*', (req, res) => {
@@ -25,4 +23,4 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(PORT, () => console.log(`server runnig http://${host}:${PORT}`))
+app.listen(PORT, () => console.log(PORT))
