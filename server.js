@@ -6,7 +6,7 @@ const app = express()
 const network = os.networkInterfaces()
 const host = network.wlp2s0[0].address
 
-const PORT = 3000
+const PORT = prroces.env.PORT || 3000
 
 app.use(express.static(path.join(__dirname, 'assets')))
 
